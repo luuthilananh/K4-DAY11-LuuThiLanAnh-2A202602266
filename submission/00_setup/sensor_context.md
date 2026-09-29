@@ -1,6 +1,5 @@
 # Sensor context
 
-- TODO — Rig: mô tả ngắn xe/camera gắn ở đâu theo hiểu biết của bạn từ ảnh (ADASIND không kèm tài liệu rig chi
-  tiết, ghi theo quan sát).
-- TODO — `ego_body` nhìn thấy ở đâu trong frame (góc capo, gương, tay lái...).
-- TODO — Vòng kính (lens circle) nằm ở vị trí nào trong ảnh, chiếm khoảng bao nhiêu phần khung hình.
+- Rig: quan sát từ các frame slice `B1-edge` (`adasind_001320.jpg`, `adasind_014670.jpg`, `adasind_034080.jpg`), camera có vẻ gắn trên **xe hai bánh** (xe máy) của người lái, hướng ra phía trước, vì góc dưới trái khung hình liên tục thấy tay cầm ghi-đông, một bàn tay đang nắm tay lái, và một phần chân/đùi mặc quần sáng màu của người lái — đặc trưng của camera hành trình gắn trên xe máy chứ không phải ô tô. ADASIND không kèm tài liệu rig chính thức nên đây là suy luận từ ảnh, không phải thông số kỹ thuật xác nhận.
+- `ego_body` nhìn thấy ở: **góc dưới-trái khung hình** — gồm tay lái (ghi-đông), bàn tay người lái, và một phần chân/đùi. Vùng này xuất hiện ổn định ở đa số frame (46/48 theo GUIDE.md), trừ 2 frame `adasind_006840.jpg` và `adasind_271039.jpg` không thấy ego_body.
+- Vòng kính (lens circle): gần như một hình tròn lớn choán gần hết chiều rộng khung ảnh (ảnh dọc/portrait), tâm hơi lệch xuống dưới so với tâm khung hình; phần ngoài vòng kính (4 góc, đặc biệt góc trên-trái và dải dưới cùng) là vùng tối đen — đây chính là phần cần polygon `lens_border` (đã import sẵn để soát, không tự vẽ mới theo R08).

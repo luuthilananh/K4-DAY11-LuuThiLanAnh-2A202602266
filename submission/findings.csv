@@ -8,3 +8,28 @@ r2_qa,B1-edge,adasind_014670.jpg,L1,L_only,WRONG_CLASS,,P1,annotator,R04,screens
 r2_qa,B1-edge,adasind_034080.jpg,L2,L_only,DUPLICATE,,P1,annotator,R03,screenshots/adasind_034080.jpg_L1_L2_bike_overlap.png,rework,v1.0.0,Box L2 nằm sát sau L1 cần kiểm tra tránh nhầm rider hoặc duplicate xe máy
 r2_qa,B1-edge,adasind_001320.jpg,L1,L_only,IGNORE_SCOPE,,P0,annotator,R07,screenshots/adasind_001320.jpg_L1_L3.png,rework,v1.0.0,Kiểm tra phạm vi người đi bộ L1 cạnh ThreeWheeler L3 và bổ sung ego_body
 r2_qa,B1-edge,adasind_034080.jpg,L9,L_only,IGNORE_SCOPE,,P0,annotator,R07,screenshots/adasind_034080.jpg_L9_ego.png,rework,v1.0.0,Box L9 đè lên thân gương xe ego thiếu polygon ignore_region
+r1_craft,B1-edge,adasind_014670.jpg,L1+R5,na,WRONG_CLASS,E1_annotator_error,P1,annotator,R04,,rework,v1.0.0,Trùng ca đã ghi ở r2_qa (bus/truck) — DRAFT cần xác nhận lại trên ảnh
+r1_craft,B1-edge,adasind_014670.jpg,L2,na,SPURIOUS,E1_annotator_error,P1,annotator,R01,,rework,v1.0.0,Box L2 không khớp reference lẫn model — DRAFT cần soi overlay xem có vật thật không
+r1_craft,B1-edge,adasind_034080.jpg,R9,na,MISSING,E1_annotator_error,P1,annotator,R01,,rework,v1.0.0,Reference có vật ở R9 mà nhãn của bạn chưa có — DRAFT cần vẽ bổ sung
+r3_diag,B1-edge,adasind_001320.jpg,L3+R3,LR_noM,MISSING,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Nhãn khớp reference (mid) — model bỏ sót; giả thuyết miền dữ liệu, cần thêm case để xác nhận
+r3_diag,B1-edge,adasind_001320.jpg,L7+R6,LR_noM,MISSING,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Nhãn khớp reference (edge, gần vòng kính) — model bỏ sót, phù hợp giả thuyết méo ảnh rìa
+r3_diag,B1-edge,adasind_001320.jpg,L4+R5,LR_noM,MISSING,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Nhãn khớp reference (mid) — model bỏ sót; xem thêm zone_table
+r3_diag,B1-edge,adasind_001320.jpg,M3,M_only,SPURIOUS,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Model tạo box mà cả nhãn và reference đều không có (center) — nghi hallucination, DRAFT cần xem overlay model
+r3_diag,B1-edge,adasind_001320.jpg,M5,M_only,SPURIOUS,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Model tạo box thừa (mid) — cùng mẫu với M3/M6, DRAFT cần xem overlay model
+r3_diag,B1-edge,adasind_001320.jpg,M6,M_only,SPURIOUS,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Model tạo box thừa (edge) — cùng mẫu với M3/M5, DRAFT cần xem overlay model
+r3_diag,B1-edge,adasind_014670.jpg,L5+R3,LR_noM,MISSING,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Nhãn khớp reference (mid) — model bỏ sót
+r3_diag,B1-edge,adasind_014670.jpg,L1+M3,LM_noR,SPURIOUS,E5_unresolved,P2,qa,,,escalate,v1.0.0,Trùng frame/index với ca L1 WRONG_CLASS (bus/truck) ở trên — nghi đây là CÙNG một box, chỉ không ghép được với R vì sai class chứ không hẳn reference thiếu vật. Cần xem qa_overlay.html xác nhận trước khi kết luận E0 hay chỉ là hệ quả của WRONG_CLASS
+r3_diag,B1-edge,adasind_014670.jpg,L2,L_only,SPURIOUS,E1_annotator_error,P1,annotator,,,rework,v1.0.0,Chỉ mình bạn thấy (center), cả reference và model đều không — DRAFT nghi box thừa, cần soi overlay
+r3_diag,B1-edge,adasind_014670.jpg,R5,R_only,MISSING,E1_annotator_error,P1,annotator,,,rework,v1.0.0,Reference có (mid) mà nhãn của bạn thiếu — cần vẽ bổ sung
+r3_diag,B1-edge,adasind_014670.jpg,M6,M_only,SPURIOUS,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Model tạo box thừa (mid)
+r3_diag,B1-edge,adasind_014670.jpg,M7,M_only,SPURIOUS,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Model tạo box thừa (center)
+r3_diag,B1-edge,adasind_034080.jpg,L1+R5,LR_noM,MISSING,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Nhãn khớp reference (mid) — model bỏ sót
+r3_diag,B1-edge,adasind_034080.jpg,L6+R7,LR_noM,MISSING,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Nhãn khớp reference (center) — model bỏ sót dù ở vùng ít méo hơn, cần thêm case để kết luận
+r3_diag,B1-edge,adasind_034080.jpg,L2+R8,LR_noM,MISSING,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Nhãn khớp reference (mid) — model bỏ sót
+r3_diag,B1-edge,adasind_034080.jpg,R9,R_only,MISSING,E1_annotator_error,P1,annotator,,,rework,v1.0.0,Trùng ca MISSING ở r1_craft — reference có (center) mà nhãn của bạn thiếu, cần vẽ bổ sung
+r3_diag,B1-edge,adasind_034080.jpg,M7,M_only,SPURIOUS,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Model tạo box thừa (mid)
+r3_diag,B1-edge,adasind_034080.jpg,M8,M_only,SPURIOUS,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Model tạo box thừa (mid)
+r3_diag,B1-edge,adasind_034080.jpg,M9,M_only,SPURIOUS,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Model tạo box thừa (mid)
+r3_diag,B1-edge,adasind_034080.jpg,M10,M_only,SPURIOUS,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Model tạo box thừa (center)
+r3_diag,B1-edge,adasind_034080.jpg,M11,M_only,SPURIOUS,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Model tạo box thừa (center)
+r3_diag,B1-edge,adasind_034080.jpg,M12,M_only,SPURIOUS,E4_model_domain,P2,ai_team,,,keep_with_reason,v1.0.0,Model tạo box thừa (mid) — frame 034080 có tới 6 box M_only, đáng chú ý nhất trong slice

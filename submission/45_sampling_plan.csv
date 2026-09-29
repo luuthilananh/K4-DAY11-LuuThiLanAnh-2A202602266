@@ -1,9 +1,9 @@
 camera_id,slice_type,frames,risk,rationale
-front,normal,,TODO,TODO
-front,hard,,TODO,TODO
-rear,normal,,TODO,TODO
-rear,hard,,TODO,TODO
-left,normal,,TODO,TODO
-left,hard,,TODO,TODO
-right,normal,,TODO,TODO
-right,hard,,TODO,TODO
+front,normal,30,trung binh,Luu luong xe/nguoi qua lai deu dan phia truoc; can du mau de kiem tra class pho bien (Car/Bike/Pedestrian) o dieu kien anh sang binh thuong
+front,hard,20,cao,Vung seam voi camera trai/phai o hai goc truoc de gay DUPLICATE hoac bo sot khi vat cat ngang; nguoc sang/loa den ban dem lam mo bien vat
+rear,normal,30,trung binh,Tuong tu front nhung it vat qua lai hon; giu so mau gan bang front de so sanh cheo hai huong doc xe
+rear,hard,20,cao,Ego_body (co xe/bien so) chiem nhieu dien tich hon o rear theo quan sat tu slice B1-edge; de nham ego_body voi vat that phia sau
+left,normal,20,trung binh,It vat dong hon front/rear trong dieu kien binh thuong (chu yeu via he/le duong)
+left,hard,30,cao,Zone edge/mid la noi meo fisheye manh nhat (theo zone_table.md cua slice B1-edge, mid la zone gay nhieu nhat ca ve L va M); camera left/right o gan goc xe nen ty le vat roi vao edge cao hon front/rear
+right,normal,20,trung binh,Tuong tu left, it vat dong hon trong dieu kien binh thuong
+right,hard,30,cao,Cung ly do voi left (meo canh, zone edge/mid), them rui ro rieng: diem mu khi sang duong/re phai can nhieu mau kho de kiem tra

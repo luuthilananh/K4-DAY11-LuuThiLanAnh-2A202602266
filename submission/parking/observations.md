@@ -1,6 +1,6 @@
 # Quan sát vạch ô đỗ
 
-- Hai vạch `parking_line` đã vẽ (mô tả vị trí trong ảnh): TODO
-- Một vạch/dấu sơn hoặc biên **không** vẽ, và vì sao: TODO
-- Polygon `free_space` dừng ở đâu; có phần bị che nào không: TODO
-- Ca chưa chắc cần hỏi người soát (nếu không có, ghi “không có”): TODO
+- Đã vẽ tổng cộng ~25 `parking_line`, không chỉ 2 vạch tối thiểu — bao phủ cả hai dãy ô nhìn thấy trong ảnh. Hai ví dụ tiêu biểu: (1) vạch chéo ở **dãy gần** (góc dưới-phải ảnh, khoảng toạ độ x≈405–527, y≈652–720) — ranh giới giữa hai ô đỗ sát camera nhất; (2) vạch chéo ở **dãy xa** (giữa ảnh, gần đường chân trời/hàng cây, khoảng x≈406–454, y≈494–499) — ranh giới ô đỗ ở dãy phía xa, ngắn hơn do phối cảnh.
+- Một đường **không** vẽ thành `parking_line`: đường kẻ dài gần như xuyên suốt chiều ngang ảnh (toạ độ khoảng x=2→960, y=541→507, gần như nằm ngang, hơi nghiêng). Đường này khác hẳn các vạch chia ô (vốn là các đoạn chéo ngắn, riêng lẻ từng ô) — nó trông giống **ranh giới/curb giữa hai dãy ô** (đường phân làn dài) hơn là ranh giới của một ô đỗ cụ thể, nên không gán `parking_line` theo đúng định nghĩa "đoạn sơn chia MỘT ô đỗ riêng lẻ" (docs/11-parking-lines-vi.md).
+- Polygon `free_space` dừng ở mép gần của dãy ô đỗ xa (khoảng y≈463–480, ngay trước vạch ranh dãy xa), trải theo toàn bộ chiều rộng ảnh phía dưới đường chân trời. Có một khấc lõm nhỏ ở khoảng x=194–220 (y≈463–479) để né một cột (đèn/biển báo) đứng giữa bãi đỗ nhìn thấy trong ảnh — vùng đó bị vật thể che nên không tính là mặt đường trống nhìn thấy được.
+- Ca chưa chắc cần hỏi người soát: đường kẻ dài ngang nêu ở trên — chưa chắc chắn 100% đây là ranh giới dãy hay thực chất cũng là một dạng vạch chia ô kéo dài; cần người soát xác nhận trên ảnh gốc độ phân giải cao hơn.
